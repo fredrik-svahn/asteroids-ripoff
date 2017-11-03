@@ -6,89 +6,77 @@ import java.awt.Polygon;
 
 import main.Game;
 
+import javax.swing.text.html.parser.Entity;
+
 public class Player extends Ent {
-	private Polygon bounds;
-	private double angle;
-	private double[] xpoints;
-	private double[] ypoints;
-	private int npoints;
-	
+	private double x;
+	private double y;
+	private double turnSpeed;
+	private double speed;
+
 	public Player(float x, float y) {
-		npoints = 3;
-		xpoints = new double[3];
-		ypoints = new double[3];
-		xpoints[0] = 0;
-		xpoints[1] = 10;
-		xpoints[2] = -10;
-		
-		ypoints[0] = -20;
-		ypoints[1] = 20;
-		ypoints[2] = 20;
+		bounds = new Bounds();
+		bounds.addVertex(50, 50);
+		bounds.addVertex(-50, 50);
+		bounds.addVertex(0,-50);
+		turnSpeed = 0.1;
+		speed = 1;
+		solid = true;
+		type = EntityType.PLAYER;
+	}
 
-		bounds = new Polygon();
-		bounds.xpoints[0] = (int)xpoints[0];
-		bounds.xpoints[1] = (int)xpoints[1];
-		bounds.xpoints[2] = (int)xpoints[2];
+	public double getTurnSpeed() {
+		return turnSpeed;
+	}
 
-		bounds.ypoints[0] = (int)ypoints[0];
-		bounds.ypoints[1] = (int)ypoints[1];
-		bounds.ypoints[2] = (int)ypoints[2];
+	public double getSpeed() {
+		return speed;
+	}
 
+	public void setTurnSpeed(double turnSpeed) {
+		this.turnSpeed = turnSpeed;
 	}
-		
-	public void move() {
-		for(int i = 0; i < xpoints.length; i++) {
-			bounds.xpoints[i] = (int)(x + xpoints[i]);
-			bounds.ypoints[i] = (int)(y + ypoints[i]);
-		}
+
+	public void setSpeed(double speed) {
+		this.speed = speed;
 	}
-	
-	private double getRotateX(double angle, double x, double y) {
-		return x * Math.cos(angle) - y * Math.sin(angle); 
-	}
-	
-	private double getRotateY(double angle, double x, double y) {
-		return x * Math.sin(angle) + y * Math.cos(angle);
-	}
-	
+
 	private void rotate(double angle) {
 		this.angle += angle;
-
-		for(int i = 0; i < xpoints.length; i++) {
-			xpoints[i] = getRotateX(this.angle, xpoints[i], ypoints[i]);
-			ypoints[i] = getRotateY(this.angle, xpoints[i], ypoints[i]);
-
-
-		}
 	}
 
 	public void render(Graphics g) {
-		g.setColor(new Color(255, 0, 0));
-		//System.out.println(bounds.xpoints[0] + " " + bounds.xpoints[1] + " " + bounds.xpoints[2]);
-		//System.out.println(bounds.ypoints[0] + " " + bounds.ypoints[1] + " " + bounds.ypoints[2]);
-		g.fillPolygon(bounds.xpoints, bounds.ypoints, bounds.xpoints.length);
+		Color color = new Color(255,0,0);
+		bounds.render(g, color, angle, x, y);
 	}
 	
 	public void tick() {
 		x += velX;
 		y += velY;
 		
-		if(Game.KEY_ROTATE_LEFT) {
-			rotate(-0.05);
+		if(Game.getAction("LEFT")) {
+			rotate(-turnSpeed);
 		}
 		
-		if(Game.KEY_ROTATE_RIGHT) {
-			rotate(0.05);
+		if(Game.getAction("RIGHT")) {
+			rotate(turnSpeed);
 		}
 		
-		if(Game.KEY_FORWARD) {
-			double x = Math.sin(angle) * 0.05;
-			double y = -Math.cos(angle) * 0.05;
+		if(Game.getAction("UP")) {
+			double x = Math.sin(angle) * speed;
+			double y = -Math.cos(angle) * speed;
 			
 			velX += x;
 			velY += y;
 		}
+
 		
 		move();
+	}
+
+	public void collision(Ent collisionEntity) {
+		if(collisionEntity.getType() == EntityType.PROJECTILE) {
+			Game.SCORE -= 5;
+		}
 	}
 }
