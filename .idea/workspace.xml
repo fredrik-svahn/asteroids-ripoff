@@ -2,30 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8354c0c9-ca80-400b-be76-746b45b2e2bd" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/.classpath" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/.project" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/.settings/org.eclipse.jdt.core.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/Game1.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/bin/ent/Asteroid.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/bin/ent/Ent.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/bin/ent/Player.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/bin/ent/Projectile.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/bin/main/Game$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/bin/main/Game.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/bin/main/KeyboardListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/bin/main/Window.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/src/ent/Asteroid.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/src/ent/Ent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/src/ent/Player.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/src/ent/Projectile.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/src/main/Game.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/src/main/KeyboardListener.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Game1/src/main/Window.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/production/asteroids-ripoff/ent/Asteroid.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/production/asteroids-ripoff/ent/Ent.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/production/asteroids-ripoff/ent/Player.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/production/asteroids-ripoff/ent/Projectile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/production/asteroids-ripoff/main/Game$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/production/asteroids-ripoff/main/Game.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/production/asteroids-ripoff/main/KeyboardListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/production/asteroids-ripoff/main/Window.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -61,8 +46,8 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ent/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="54" column="10" lean-forward="false" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
+            <state relative-caret-position="153">
+              <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -86,7 +71,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="43" />
     <option name="width" value="1260" />
@@ -115,6 +100,17 @@
               <item name="asteroids-ripoff" type="b2602c69:ProjectViewProjectNode" />
               <item name="asteroids-ripoff" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="asteroids-ripoff" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asteroids-ripoff" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asteroids-ripoff" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asteroids-ripoff" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="ent" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -126,6 +122,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -260,8 +259,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -276,7 +274,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16257995" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16257995" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -341,11 +339,86 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ent/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="54" column="10" lean-forward="false" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
+        <state relative-caret-position="153">
+          <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>9.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Game1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
