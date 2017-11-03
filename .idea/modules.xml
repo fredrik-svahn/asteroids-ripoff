@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/asteroids-ripoff.iml" filepath="$PROJECT_DIR$/.idea/asteroids-ripoff.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Game1.iml" filepath="$PROJECT_DIR$/Game1.iml" />
     </modules>
   </component>
 </project>
