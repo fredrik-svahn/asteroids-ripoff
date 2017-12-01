@@ -1,5 +1,7 @@
 package main;
 
+import ent.Player;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -19,7 +21,7 @@ public class Game extends JPanel{
 	private int SLEEP_TIME = 1000 / TARGET_FPS;
 
 	public static void main(String[] args) {
-
+		Game game = new Game();
 	}
 
 	public Game() {
@@ -31,7 +33,23 @@ public class Game extends JPanel{
 	}
 
 	private void initializeWorld() {
+		world = new World();
+		Player ply = new Player();
+		ply.setX(0);
+		ply.setY(0);
+		ply.setWidth(50);
+		ply.setHeight(50);
 
+		world.addGameObject(ply);
+	}
+
+	public void start() {
+		running = true;
+		mainLoop();
+	}
+
+	public void stop() {
+		running = false;
 	}
 
 	public void mainLoop() {
