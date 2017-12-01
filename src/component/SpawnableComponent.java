@@ -1,4 +1,4 @@
 package component;
 
-public class SpawnableComponent {
+public class SpawnableComponent extends Component {
 }

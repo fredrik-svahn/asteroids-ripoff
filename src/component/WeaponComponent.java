@@ -1,4 +1,4 @@
 package component;
 
-public class WeaponComponent {
+public class WeaponComponent extends Component {
 }

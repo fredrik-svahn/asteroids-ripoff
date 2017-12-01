@@ -1,4 +1,4 @@
 package component;
 
-public class PhysicsBodyComponent {
+public class PhysicsBodyComponent extends Component{
 }

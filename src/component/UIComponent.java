@@ -1,4 +1,4 @@
 package component;
 
-public class UIComponent {
+public class UIComponent extends Component {
 }
