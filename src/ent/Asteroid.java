@@ -2,7 +2,7 @@ package ent;
 
 import java.awt.Graphics;
 
-public class Asteroid extends Ent {
+public class Asteroid extends GameObject {
 	public void move() {
 		
 	}

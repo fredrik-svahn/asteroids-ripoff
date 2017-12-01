@@ -1,4 +1,7 @@
 package main;
 
-public class Event {
+public abstract class Event {
+    public Class getType() {
+        return this.getClass();
+    }
 }

@@ -1,5 +1,5 @@
 package ent;
 
-public enum EntityType {
+public enum GameObjectType {
     PROJECTILE, ENEMY, PLAYER
 }
