@@ -10,7 +10,6 @@ public class Game extends JPanel{
 	private Window window;
 	private World world;
 
-
 	// Window settings
 	private final String TITLE = "Title";
 	private final int WIDTH = 500;
@@ -34,13 +33,8 @@ public class Game extends JPanel{
 
 	private void initializeWorld() {
 		world = new World();
-		Player ply = new Player();
-		ply.setX(0);
-		ply.setY(0);
-		ply.setWidth(50);
-		ply.setHeight(50);
-
-		world.addGameObject(ply);
+		Player p = new Player();
+		
 	}
 
 	public void start() {
@@ -67,7 +61,7 @@ public class Game extends JPanel{
 	public void updateWorld(Graphics g) {
 		int worldSize = world.getSize();
 		for(int i = 0; i < worldSize; i++) {
-			world.getGameObject(i).update(world, g);
+
 		}
 	}
 

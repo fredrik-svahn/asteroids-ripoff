@@ -1,23 +1,24 @@
 package main;
+import ent.Entity;
+
 import java.util.LinkedList;
-import ent.GameObject;
 
 public class World {
-    private LinkedList<GameObject> gameObjectList;
+    private LinkedList<Entity> entityList;
 
     public World() {
-        gameObjectList = new LinkedList<GameObject>();
+        entityList = new LinkedList<Entity>();
     }
 
-    public GameObject getGameObject(int i) {
-        return gameObjectList.get(i);
+    public Entity getGameObject(int i) {
+        return entityList.get(i);
     }
 
     public int getSize() {
-        return gameObjectList.size();
+        return entityList.size();
     }
 
-    public void addGameObject(GameObject e) {
-        gameObjectList.add(e);
+    public void addGameObject(Entity e) {
+        entityList.add(e);
     }
 }
