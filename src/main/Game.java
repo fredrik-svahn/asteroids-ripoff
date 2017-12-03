@@ -4,11 +4,13 @@ import ent.Player;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.HashMap;
 
 public class Game extends JPanel{
 	private boolean running;
 	private Window window;
 	private World world;
+	private Input input;
 
 	// Window settings
 	private final String TITLE = "Title";
@@ -21,6 +23,7 @@ public class Game extends JPanel{
 
 	public static void main(String[] args) {
 		Game game = new Game();
+		game.start();
 	}
 
 	public Game() {
@@ -28,13 +31,16 @@ public class Game extends JPanel{
 		window.add(this);
 		window.setVisible(true);
 
+		input = new Input();
+		window.addKeyListener(input);
+
 		initializeWorld();
 	}
 
 	private void initializeWorld() {
 		world = new World();
 		Player p = new Player();
-		
+		world.addEntity(p);
 	}
 
 	public void start() {
@@ -61,7 +67,7 @@ public class Game extends JPanel{
 	public void updateWorld(Graphics g) {
 		int worldSize = world.getSize();
 		for(int i = 0; i < worldSize; i++) {
-
+			world.getEntity(i).update(world, g, input);
 		}
 	}
 

@@ -10,7 +10,7 @@ public class World {
         entityList = new LinkedList<Entity>();
     }
 
-    public Entity getGameObject(int i) {
+    public Entity getEntity(int i) {
         return entityList.get(i);
     }
 
@@ -18,7 +18,7 @@ public class World {
         return entityList.size();
     }
 
-    public void addGameObject(Entity e) {
+    public void addEntity(Entity e) {
         entityList.add(e);
     }
 }
