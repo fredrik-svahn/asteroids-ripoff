@@ -1,5 +1,6 @@
 package main;
 
+import ent.Entity;
 import ent.Player;
 
 import javax.swing.*;
@@ -13,9 +14,9 @@ public class Game extends JPanel{
 	private Input input;
 
 	// Window settings
-	private final String TITLE = "Title";
-	private final int WIDTH = 500;
-	private final int HEIGHT = 500;
+	public final static String TITLE = "Title";
+	public final static int WIDTH = 500;
+	public final static int HEIGHT = 500;
 
 	// Fps settings
 	private int TARGET_FPS = 30;
@@ -68,6 +69,16 @@ public class Game extends JPanel{
 		int worldSize = world.getSize();
 		for(int i = 0; i < worldSize; i++) {
 			world.getEntity(i).update(world, g, input);
+		}
+	}
+
+	public void cleanUpWorld() {
+		int worldSize = world.getSize();
+		for(int i = 0; i < worldSize; i++) {
+			Entity temp = world.getEntity(i);
+			if(temp.safeToDelete) {
+				world.removeEntity(temp);
+			}
 		}
 	}
 

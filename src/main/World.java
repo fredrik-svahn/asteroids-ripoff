@@ -21,4 +21,6 @@ public class World {
     public void addEntity(Entity e) {
         entityList.add(e);
     }
+
+    public void removeEntity(Entity e) { entityList.remove(e);}
 }
