@@ -78,12 +78,7 @@ public class Player extends Entity{
         if(input.getKey(KeyEvent.VK_SPACE)) {
             Rotation rot = new Rotation();
             rot.angle = rotation.angle;
-            interval.update();
-
-            if(interval.hasTick()) {
-                weapon.fire(world, rot, getFirePos());
-                interval.reset();
-            }
+            weapon.fire(world, rot, getFirePos());
         }
     }
 

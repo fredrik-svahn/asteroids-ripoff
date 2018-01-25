@@ -23,7 +23,9 @@ public class Weapon {
     }
 
     public void fire(World world, Rotation rotation, Position position) {
+        fireInterval.update();
         if(isReadyToFire()) {
+            fireInterval.reset();
             world.addEntity(createProjectile(rotation, position));
         }
     }
