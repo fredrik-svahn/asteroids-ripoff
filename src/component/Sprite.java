@@ -10,6 +10,14 @@ import java.io.IOException;
 public class Sprite {
     public BufferedImage image;
 
+    public Sprite(String imageFileName) {
+        try {
+            image = Sprite.createBufferedImage(imageFileName);
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static BufferedImage createBufferedImage(String filename) throws IOException {
         File file = new File(filename);
 
@@ -25,8 +33,8 @@ public class Sprite {
         Graphics2D g2d = (Graphics2D)(g);
         AffineTransform transform = g2d.getTransform();
         g2d.translate(x, y);
-        g2d.rotate(angle);
-        g2d.drawImage(image, (int)-width / 2,(int)-height / 2, (int)width, (int)height, null);
+        //g2d.rotate(angle);
+        g2d.drawImage(image, (int)x,(int)y, (int)width, (int)height, null);
         g2d.setTransform(transform);
     }
 }

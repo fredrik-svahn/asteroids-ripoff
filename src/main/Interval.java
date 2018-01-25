@@ -23,6 +23,10 @@ public class Interval {
         return deltaTime;
     }
 
+    public void reset() {
+        deltaTime = 0;
+    }
+
     public boolean hasTick() {
         if(deltaTime >= timeInterval) {
             return true;

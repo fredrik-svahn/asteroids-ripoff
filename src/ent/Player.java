@@ -9,7 +9,6 @@ import main.World;
 
 import java.awt.*;
 import java.io.IOException;
-import java.util.LinkedList;
 
 public class Player extends Entity{
 
@@ -17,9 +16,8 @@ public class Player extends Entity{
     private Velocity velocity;
     private Rotation rotation;
     private Dimension dimension;
-    private Sprite sprite;
+    private Sprite playerSprite;
     private Weapon weapon;
-    private LinkedList<Projectile> projectiles;
     private Interval interval;
 
     public Player() {
@@ -27,35 +25,26 @@ public class Player extends Entity{
         velocity = new Velocity();
         rotation = new Rotation();
         dimension = new Dimension();
-        sprite = new Sprite();
-        projectiles = new LinkedList<Projectile>();
-        position.x = 0;
-        position.y = 0;
+        playerSprite = new Sprite("resources/player-Sprite-rotated.png");
+        createWeapon();
+        setPlayerSize(50, 50);
+    }
 
-        Sprite projectileSprite = new Sprite();
+    private void setPlayerSize(float width, float height) {
+        dimension.width = width;
+        dimension.height = height;
+    }
 
-        try {
-            projectileSprite.image = Sprite.createBufferedImage("resources/player-projectile.png");
-        } catch(IOException e) {
-            e.printStackTrace();
-        }
+    private void createWeapon() {
+        Sprite projectileSprite = new Sprite("resources/player-projectile.png");
+        weapon = new Weapon(projectileSprite, 10, getWeaponSize(), 10);
+    }
 
+    private Dimension getWeaponSize() {
         Dimension weaponSize = new Dimension();
         weaponSize.width = 10;
         weaponSize.height = 10;
-
-        int fireRate = 20;
-        interval = new Interval(1000f / fireRate);
-        weapon = new Weapon(projectileSprite, 10, 15, weaponSize);
-
-        try {
-            sprite.image = Sprite.createBufferedImage("resources/player-sprite-rotated.png");
-        } catch(IOException e) {
-            e.printStackTrace();
-        }
-
-        dimension.width = 50;
-        dimension.height = 50;
+        return weaponSize;
     }
 
     private void move() {
@@ -63,69 +52,66 @@ public class Player extends Entity{
         position.y += velocity.y;
     }
 
-    private void updateIntervals() {
+    public Position getCenter() {
+        float centerX = position.x + dimension.width / 2 ;
+        float centerY = position.y + dimension.height / 2;
 
+        return new Position(centerX, centerY);
     }
 
     private void draw(Graphics g) {
-        sprite.draw(g, position.x, position.y ,dimension.width ,dimension.height ,rotation.angle);
+        playerSprite.draw(g, position.x, position.y ,dimension.width ,dimension.height ,rotation.angle);
     }
 
     private void updateInput(World world, Input input) {
-        if(input.getKey(KeyEvent.VK_RIGHT) && input.getKey(KeyEvent.VK_LEFT)) {
-            // DO NOTHING
-        }
-        else if(input.getKey(KeyEvent.VK_LEFT)) {
-            // ROTATE COUNTER CLOCKWISE
-            rotation.angle += Rotation.toRads(-10);
+        if(input.getKey(KeyEvent.VK_LEFT)) {
+            rotateDegrees(-6);
         }
         else if(input.getKey(KeyEvent.VK_RIGHT)) {
-            // ROTATE CLOCKWISE
-            rotation.angle += Rotation.toRads(10);
+            rotateDegrees(6);
         }
 
         if(input.getKey(KeyEvent.VK_UP)) {
-            velocity.x += (float)Math.cos(rotation.angle)*1.03f;
-            velocity.y += (float)Math.sin(rotation.angle)*1.03f;
+            moveForwards();
         }
 
         if(input.getKey(KeyEvent.VK_SPACE)) {
-
-
             Rotation rot = new Rotation();
             rot.angle = rotation.angle;
             interval.update();
-            Position firePos =  getFirePos();
 
-            while(interval.hasTick()) {
+            if(interval.hasTick()) {
                 weapon.fire(world, rot, getFirePos());
-                interval.decrement();
+                interval.reset();
             }
-
         }
-
     }
 
-    public Position getCenter() {
-        Position pos = new Position();
-        pos.x = position.x + dimension.width / 2;
-        pos.y = position.y + dimension.height / 2;
-        return pos;
+    private void moveForwards() {
+        velocity.x += (float)Math.cos(rotation.angle)*1.01f;
+        velocity.y += (float)Math.sin(rotation.angle)*1.01f;
+    }
+
+    public void rotateDegrees(float angle) {
+        rotation.angle += Rotation.toRads(angle);
     }
 
     public Position getFirePos() {
-        Position pos = new Position();
-        pos.x = position.x + dimension.width;
-        pos.y = position.y + dimension.height / 2;
-
+        Position pos = getCenter();
+        pos.x += dimension.width / 2;
         pos = Rotation.rotate(pos, getCenter(), rotation.angle);
         return pos;
     }
 
     @Override
     public void update(World world, Graphics g, Input input) {
+        Position pos = getFirePos();
+        g.setColor(Color.RED);
         updateInput(world, input);
         move();
         draw(g);
+
+        g.drawRect((int)pos.x, (int)pos.y, (int)5, (int)5);
+        g.drawRect((int)position.x, (int)position.y, (int)5, (int)5);
     }
 }

@@ -15,11 +15,10 @@ public class Rotation {
         newPosition.y = currentPos.y - center.y;
 
         newPosition.x = (float)(newPosition.x*Math.cos(angle) - newPosition.y*Math.sin(angle));
-        newPosition.y = (float)(newPosition.x*Math.sin(angle) - newPosition.y*Math.cos(angle));
+        newPosition.y = (float)(newPosition.x*Math.sin(angle) + newPosition.y*Math.cos(angle));
 
         newPosition.x += center.x;
         newPosition.y += center.y;
-
         return newPosition;
     }
 
